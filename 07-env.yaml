@@ -1,0 +1,16 @@
+apiversion: v1
+kind: Pod
+metadata:
+  name: envar-demo
+  labels:
+    purpose: demonstarte-envars
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    env:
+    - name: COURSE
+      value: "DEVOPS"
+    - name: TRAINER
+      value: "self"
+

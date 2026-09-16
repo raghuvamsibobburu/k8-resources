@@ -1,0 +1,20 @@
+apiversion: v1
+kind: Pod
+metadata:
+  name: labels
+  lables:
+    name: roboshop
+    tired: backend
+    environment: dev
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    resources:
+      requests: #soft limit
+      memory: "60mi"
+      cpu: "100m"
+    limits:
+      requests: #hard limit
+      memory: "128mi"
+      cpu: "150m"

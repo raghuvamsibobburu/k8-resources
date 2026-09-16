@@ -1,0 +1,16 @@
+apiversion: v1
+kind: Pod
+metadata:
+  name: labels
+  lables:
+    project: roboshop
+    component: cart
+    tired: backend
+    environment: dev
+  annoatations:
+    description: 
+    URL: https://jenkins.com/
+spec:
+  containers:
+  - name: nginx
+    image: nginx

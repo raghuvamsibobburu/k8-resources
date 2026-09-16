@@ -1,0 +1,31 @@
+apiversion: v1
+kind: Service
+metadata:
+  name: nginx-lb
+  labels:
+    purpose: service-lb-demo
+spec:
+  type: NodePort
+  selector:
+    purpose: service-lb-demo
+    project: roboshop
+    environment: dev
+  ports:
+    protocol: TCP
+    port: 80 #service-port
+    targetport: 80 #container-port
+
+
+---
+apiversion: v1
+kind: Pod
+metadata: 
+  name: nginx-lb
+  labels: 
+    name: service-lb-demo
+    project: roboshop
+    environment: dev
+spec:
+  containers:
+  - name: nginx
+    image: nginx

@@ -1,0 +1,12 @@
+apiversion: v1
+kind: Pod
+metadata:
+  name: labels
+  lables:
+    name: roboshop
+    tired: backend
+    environment: dev
+spec:
+  containers:
+  - name: nginx
+    image: nginx
